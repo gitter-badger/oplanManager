@@ -8,3 +8,6 @@
 Homestead.yaml
 Homestead.json
 
+public/adminlte/*
+public/twitter/*
+public/jquery/*
