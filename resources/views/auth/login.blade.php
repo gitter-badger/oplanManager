@@ -5,7 +5,7 @@
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="../../index2.html"><b>ABM</b> OplanManager</a>
+        <a href="../../index2.html"><b>ABM</b>OplanManager</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Přihlášení do administrace</p>
