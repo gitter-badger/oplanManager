@@ -2,9 +2,9 @@
   <!-- Logo -->
   <a href="../../index2.html" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>o</b>plan</span>
+    <span class="logo-mini"><b>oPLAN</b></span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>oplan</b>Manager</span>
+    <span class="logo-lg"><b>oPLAN</b> ABM</span>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top" role="navigation">
@@ -18,24 +18,25 @@
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
         <!-- Messages: style can be found in dropdown.less-->
+
         <!-- Notifications: style can be found in dropdown.less -->
+
         <!-- Tasks: style can be found in dropdown.less -->
+
+
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
+            <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
             <span class="hidden-xs">
 
               @if (Auth::check())
                 {{ Auth::user()->name }}
               @else
-                Hello, stranger! <a href="/auth/login">Login</a>
-                or <a href="/auth/register">Register</a>.
+                Hello, stranger!
               @endif
 
-
-
-              </span>
+            </span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
@@ -71,7 +72,7 @@
         </li>
         <!-- Control Sidebar Toggle Button -->
         <li>
-          <a href="/auth/logout" data-toggle="control-sidebar"><i class="fa fa-gears"></i>Odhlásit se</a>
+          <a href="#" data-toggle="control-sidebar">Přihlásit se</a>
         </li>
       </ul>
     </div>

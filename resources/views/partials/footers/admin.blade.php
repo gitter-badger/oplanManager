@@ -1,6 +1,6 @@
 <footer class="main-footer">
   <div class="pull-right hidden-xs">
-    <b>Verze</b> alfa 0.1
+    <b>Version</b> Alpha 0.0.1
   </div>
-  <strong>Copyright &copy; 2015 <a href="/">ABM</a>.</strong> Zatím nevím.
+  <strong>Copyright &copy; 2015 <a href="#">Zajic</a>.</strong> ABM Brno
 </footer>

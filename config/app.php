@@ -150,6 +150,8 @@ return [
         */
         //Illuminate\Html\HtmlServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+
 
     ],
 
@@ -206,6 +208,8 @@ return [
 
         //'Form'      => Illuminate\Html\FormFacade::class,
         //'Html'      => Illuminate\Html\HtmlFacade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
 
     ],
 
