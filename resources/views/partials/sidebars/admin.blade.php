@@ -15,7 +15,18 @@
     <!-- /.search form -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
-      <li class="header">HLAVNÍ NAVIGACE</li>
+      <li class="header">SPRÁVA</li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-cube"></i> <span>Správa klubů</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Seznam klubů</a></li>
+          <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Přidat nový klub</a></li>
+        </ul>
+      </li>
+
+      <li class="header">ČLENSKÁ SEKCE</li>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-dashboard"></i> <span>Panel</span> <i class="fa fa-angle-left pull-right"></i>
@@ -23,6 +34,17 @@
         <ul class="treeview-menu">
           <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
           <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+        </ul>
+      </li>
+
+      <li class="header">VŘEJNÁ SEKCE</li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-home"></i> <span>WEB</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="../../index.html"><i class="fa fa-file-text-o"></i> Stránky</a></li>
+          <li><a href="../../index2.html"><i class="fa fa-newspaper-o"></i> Novinky</a></li>
         </ul>
       </li>
 
