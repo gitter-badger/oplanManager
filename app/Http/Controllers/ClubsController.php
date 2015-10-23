@@ -18,7 +18,7 @@ class ClubsController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.clubs.index');
     }
 
     /**
