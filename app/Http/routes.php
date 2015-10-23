@@ -28,4 +28,4 @@ Route::get('test/startpage', 'TestController@index');
 
 // Backend routes
 
-Route::resource('kluby', 'ClubsController');
+Route::resource('clubs', 'ClubsController');

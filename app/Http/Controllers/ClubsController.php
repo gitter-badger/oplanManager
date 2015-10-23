@@ -28,7 +28,7 @@ class ClubsController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.clubs.create');
     }
 
     /**

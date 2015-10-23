@@ -11,7 +11,7 @@
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Domů</a></li>
-      <li><a href="{{ route('kluby.index') }}">Kluby</a></li>
+      <li><a href="{{ route('clubs.index') }}">Kluby</a></li>
       <li class="active">Přehled klubů</li>
     </ol>
   </section>

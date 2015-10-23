@@ -21,8 +21,8 @@
           <i class="fa fa-cube"></i> <span>Správa klubů</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Seznam klubů</a></li>
-          <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Přidat nový klub</a></li>
+          <li><a href="{{ route('clubs.index') }}"><i class="fa fa-circle-o"></i> Seznam klubů</a></li>
+          <li><a href="{{ route('clubs.create') }}"><i class="fa fa-circle-o"></i> Přidat nový klub</a></li>
         </ul>
       </li>
 
