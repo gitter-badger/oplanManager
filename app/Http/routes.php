@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// FontEnd pages
+Route::get('uvodni', 'IntroController@index');
+
+Route::resource('stranky', 'PagesController');
+
 // Auth routes
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

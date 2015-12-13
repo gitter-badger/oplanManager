@@ -40,11 +40,21 @@
       <li class="header">VŘEJNÁ SEKCE</li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-home"></i> <span>WEB</span> <i class="fa fa-angle-left pull-right"></i>
+          <i class="fa fa-file-text-o"></i> <span>Stránky</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="../../index.html"><i class="fa fa-file-text-o"></i> Stránky</a></li>
-          <li><a href="../../index2.html"><i class="fa fa-newspaper-o"></i> Novinky</a></li>
+          <li><a href="../../index.html"> Všechny stránky</a></li>
+          <li><a href="../../index2.html"> Přidej novou</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-newspaper-o"></i> <span>Novinky</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="../../index.html"> Všechny stránky</a></li>
+          <li><a href="../../index2.html"> Přidej novou</a></li>
         </ul>
       </li>
 

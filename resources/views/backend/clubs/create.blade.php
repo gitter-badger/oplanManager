@@ -7,7 +7,7 @@
   <section class="content-header">
     <h1>
       PŘIDAT NOVÝ KLUB
-      <small> umožní pdidat nový klub do systému</small>
+      <small> umožní přidat nový klub do systému</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Domů</a></li>
