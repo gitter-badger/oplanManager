@@ -54,7 +54,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="../../index.html"> Všechny stránky</a></li>
-          <li><a href="../../index2.html"> Přidej novou</a></li>
+          <li><a href="{{ route('news.create') }}"> Přidej novou</a></li>
         </ul>
       </li>
 

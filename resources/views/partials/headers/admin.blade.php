@@ -72,7 +72,7 @@
         </li>
         <!-- Control Sidebar Toggle Button -->
         <li>
-          <a href="#" data-toggle="control-sidebar">Přihlásit se</a>
+          <a href="{{ url ('auth/login') }}" data-toggle="control-sidebar">Přihlásit se</a>
         </li>
       </ul>
     </div>
