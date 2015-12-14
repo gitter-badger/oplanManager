@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::get('uvodni', 'IntroController@index');
 
 Route::resource('stranky', 'PagesController');
+Route::resource('novinky', 'NewsController');
 
 // Auth routes
 Route::get('auth/login', 'Auth\AuthController@getLogin');
