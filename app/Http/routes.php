@@ -18,8 +18,8 @@ Route::get('/', function () {
 // FontEnd pages
 Route::get('uvodni', 'IntroController@index');
 
-Route::resource('stranky', 'PagesController');
-Route::resource('novinky', 'NewsController');
+Route::resource('pages', 'PagesController');
+Route::resource('news', 'NewsController');
 
 // Auth routes
 Route::get('auth/login', 'Auth\AuthController@getLogin');
