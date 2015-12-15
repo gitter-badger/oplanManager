@@ -61,5 +61,19 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset ("adminlte/js/demo.js") }}" type="text/javascript"></script>
 
+    <!-- ckeditor on if necesery-->
+    <script src="{{ asset ("adminlte/plugins/ckeditor/ckeditor.js") }}" type="text/javascript"></script>
+
+
+    <script>
+      $(function () {
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('CKEditor');
+        //bootstrap WYSIHTML5 - text editor
+        //$(".textarea").wysihtml5();
+      });
+    </script>
+
   </body>
 </html>

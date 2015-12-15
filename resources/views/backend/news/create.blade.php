@@ -48,9 +48,11 @@
             <div class="form-group">
               {!! Form::label('content', 'Obsah', array('class' => 'col-sm-2 control-label')) !!}
               <div class="col-sm-10">
-              {!! Form::text('abbr', null,
+              {!! Form::textarea('content', null,
                        array('required',
                              'class'=>'form-control',
+                             'id'=>'CKEditor',
+                             'name'=>'CKEditor',
                              'placeholder'=>'obsah novinky ...')) !!}
               </div>
             </div>
@@ -65,8 +67,15 @@
               </div>
             </div>
 
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                {!! Form::submit('Ulož novinku', ['class' => 'btn btn-primary']) !!}
+                <a href="{{route ('news.index')}}" class="btn btn-default">Zpět</a>
+              </div>
+            </div>
 
-            {!! Form::close() !!}
+
+          {!! Form::close() !!}
 
 
 

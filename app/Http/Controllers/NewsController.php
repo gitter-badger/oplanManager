@@ -25,7 +25,11 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('backend.news.create');
+      $newsMenu = [
+        'newsMain' => 'active',
+        'newsCreate' => 'active'
+      ];
+        return view('backend.news.create', compact ('newsMenu'));
     }
 
     /**
