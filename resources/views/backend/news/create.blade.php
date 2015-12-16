@@ -32,7 +32,7 @@
           </div>
           <div class="box-body">
 
-            {!! Form::open(array('route' => 'news.create', 'class' => 'form-horizontal')) !!}
+            {!! Form::open(array('route' => 'news.store', 'class' => 'form-horizontal')) !!}
 
             <p class="lead">ZÁKLADNÍ ÚDAJE</p>
             <div class="form-group">
@@ -51,8 +51,8 @@
               {!! Form::textarea('content', null,
                        array('required',
                              'class'=>'form-control',
-                             'id'=>'CKEditor',
-                             'name'=>'CKEditor',
+                            // 'id'=>'CKEditor1',
+                            // 'name'=>'CKEditor1',
                              'placeholder'=>'obsah novinky ...')) !!}
               </div>
             </div>

@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
+use Session;
+
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Model;
+
 
 class NewsController extends Controller
 {
@@ -40,7 +45,19 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+          'title' => 'required',
+          'content' => 'required'
+          ]);
+
+          $input = $request->all();
+
+          News::create($input);
+
+          Session::flash('flash_message', 'Novinka uspesne pridana');
+
+          return redirect()->back();
+
     }
 
     /**
