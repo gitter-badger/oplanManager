@@ -45,6 +45,7 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
           'title' => 'required',
           'content' => 'required'
@@ -54,7 +55,7 @@ class NewsController extends Controller
 
           News::create($input);
 
-          Session::flash('flash_message', 'Novinka uspesne pridana');
+          Session::flash('flash_message', 'Novinka úspěšně publikována.');
 
           return redirect()->back();
 

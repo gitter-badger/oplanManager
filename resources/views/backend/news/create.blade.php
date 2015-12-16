@@ -32,14 +32,26 @@
           </div>
           <div class="box-body">
 
+            {{-- Flash Session message if store function is OK --}}
+            @if(Session::has('flash_message'))
+              <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4> <i class="icon fa fa-check"></i> OK!</h4>
+                {{ Session::get('flash_message') }}
+
+              </div>
+            @endif
+
+            @include ('partials.alerts.errors')
+
             {!! Form::open(array('route' => 'news.store', 'class' => 'form-horizontal')) !!}
 
             <p class="lead">ZÁKLADNÍ ÚDAJE</p>
             <div class="form-group">
               {!! Form::label('title', 'Nadpis', array('class' => 'col-sm-2 control-label')) !!}
               <div class="col-sm-10">
-              {!! Form::text('name', null,
-                       array('required',
+              {!! Form::text('title', null,
+                       array(//'required',
                              'class'=>'form-control',
                              'placeholder'=>'nadpis novinky')) !!}
               </div>
@@ -51,8 +63,8 @@
               {!! Form::textarea('content', null,
                        array('required',
                              'class'=>'form-control',
-                            // 'id'=>'CKEditor1',
-                            // 'name'=>'CKEditor1',
+                             'id'=>'CKEditor',
+                             //'name'=>'CKEditor',
                              'placeholder'=>'obsah novinky ...')) !!}
               </div>
             </div>
