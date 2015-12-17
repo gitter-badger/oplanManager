@@ -6,13 +6,13 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Přidat NOVINKU
-      <small> přidává novinky do veřejné a interní části systému</small>
+      Upravit NOVINKU
+      <small> uprav stávající novinku</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Domů</a></li>
       <li><a href="{{ route('clubs.index') }}">Novinky</a></li>
-      <li class="active">Přidat novinku</li>
+      <li class="active">Upravit novinku</li>
     </ol>
   </section>
 
@@ -24,7 +24,7 @@
         <!-- Default box -->
         <div class="box box-danger">
           <div class="box-header with-border">
-            <h3 class="box-title">Vytvoř novinku</h3>
+            <h3 class="box-title">Upravit novinku</h3>
             <div class="box-tools pull-right">
               <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
               <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
@@ -44,7 +44,7 @@
 
             @include ('partials.alerts.errors')
 
-            {!! Form::open(array('route' => 'news.store', 'class' => 'form-horizontal')) !!}
+            {!! Form::model($new, array('method' => 'put', 'route' => ['news.update', $new->id], 'class' => 'form-horizontal')) !!}
 
             <p class="lead">ZÁKLADNÍ ÚDAJE</p>
             <div class="form-group">
@@ -81,7 +81,7 @@
 
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                {!! Form::submit('Ulož novinku', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Uprav novinku', ['class' => 'btn btn-primary']) !!}
                 <a href="{{route ('news.index')}}" class="btn btn-default">Zpět</a>
               </div>
             </div>

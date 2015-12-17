@@ -80,7 +80,8 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $new = News::findOrFail($id);
+        return view('backend.news.edit')->with('new',$new);
     }
 
     /**
