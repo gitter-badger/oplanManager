@@ -103,7 +103,7 @@ class NewsController extends Controller
         $input = $request->all();
         $new->fill($input)->save();
 
-        Session::flash('flash_message', 'Novinka byla úspěšně upravena.');
+        Session::flash('flash_message', 'Novinka s názvem: '.$request->get('title').' byla úspěšně upravena.');
 
         return redirect()->back();
     }
@@ -116,6 +116,11 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        News::destroy($id);
+
+        Session::flash('flash_message', 'Novinka s názvem byla smazana.');
+
+        return redirect()->route('news.create');
+        //return redirect::route('news.create');
     }
 }

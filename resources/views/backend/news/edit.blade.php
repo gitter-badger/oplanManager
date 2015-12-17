@@ -93,6 +93,9 @@
 
           </div><!-- /.box-body -->
           <div class="box-footer">
+            {!! Form::open(array('route' => array('news.destroy', $new->id), 'method' => 'delete')) !!}
+              <button type="submit">Vymaž Novinku</button>
+            {!! Form::close() !!}
             <a class="btn btn-info btn-sm pull-right" href="{{ url('clubs') }}" role="button">ZPĚT</a>
           </div><!-- /.box-footer-->
         </div><!-- /.box -->
