@@ -93,7 +93,19 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $new = News::findOrFail($id);
+
+      $this->validate($request, [
+        'title' => 'required',
+        'content' => 'required'
+        ]);
+
+        $input = $request->all();
+        $new->fill($input)->save();
+
+        Session::flash('flash_message', 'Novinka byla úspěšně upravena.');
+
+        return redirect()->back();
     }
 
     /**
