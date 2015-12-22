@@ -16,6 +16,12 @@
     <link href="{{ asset("adminlte/css/AdminLTE.min.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("adminlte/css/skins/_all-skins.min.css")}}" rel="stylesheet" type="text/css" />
 
+    <!-- sweetalert -->
+    <link href="{{ asset("vendor/sweetalert/dist/sweetalert.css")}}" rel="stylesheet" type="text/css" />
+
+
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -58,12 +64,50 @@
     <script src="{{ asset ("adminlte/plugins/slimScroll/jquery.slimscroll.min.js") }}" type="text/javascript"></script>
     <!-- FastClick -->
     <script src="{{ asset ("adminlte/plugins/fastclick/fastclick.min.js") }}" type="text/javascript"></script>
-    <!-- AdminLTE for demo purposes -->
+
+    <!-- AdminLTE for demo purposes
     <script src="{{ asset ("adminlte/js/demo.js") }}" type="text/javascript"></script>
+    -->
 
     <!-- ckeditor on if necesery-->
     <script src="{{ asset ("adminlte/plugins/ckeditor/ckeditor.js") }}" type="text/javascript"></script>
 
+    <!-- https://laracasts.com/discuss/channels/laravel/confirm-delete-using-sweetalert?page=1
+    http://codepen.io/anon/pen/gaarJJ?editors=101
+    http://lipis.github.io/bootstrap-sweetalert/
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
+  -->
+
+    <!-- sweetalaert js on if necesery-->
+    <script src="{{ asset ("vendor/sweetalert/dist/sweetalert.min.js") }}" type="text/javascript"></script>
+
+
+    <script>
+      document.querySelector('button#pokus1').onclick = function() {
+        swal("tady je ten tvuj text.");
+      };
+
+    </script>
+
+    <script>
+
+    $('button#deleteitem').on('click', function(){
+        swal({
+          title: "Jseš si opravdu jistý?",
+          text: "Tato akce je nevratná, záznam bude nevratně vymazán z databáze!",         type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Ano, vymazat!",
+          closeOnConfirm: false
+        },
+             function(){
+          $("#delform").submit();
+        });
+      })
+
+    </script>
+
+    -->
 
     <script>
       $(function () {

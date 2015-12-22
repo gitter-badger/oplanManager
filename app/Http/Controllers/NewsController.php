@@ -20,7 +20,12 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return 'jede novinky';
+
+      $news = News::orderBy('created_at', 'desc')
+                    ->get();
+
+      return view('backend.news.home')->with('news', $news);
+      //  return 'jede novinky';
     }
 
     /**
@@ -69,7 +74,8 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
+      $new = News::findOrFail($id);
+      return view('backend.news.show')->with('new', $new);
     }
 
     /**
@@ -105,7 +111,7 @@ class NewsController extends Controller
 
         Session::flash('flash_message', 'Novinka s názvem: '.$request->get('title').' byla úspěšně upravena.');
 
-        return redirect()->back();
+        return view('backend.news.home');
     }
 
     /**
@@ -118,9 +124,8 @@ class NewsController extends Controller
     {
         News::destroy($id);
 
-        Session::flash('flash_message', 'Novinka s názvem byla smazana.');
+        Session::flash('flash_message', 'Novinka byla smazána.');
 
-        return redirect()->route('news.create');
-        //return redirect::route('news.create');
+        return redirect()->route('news.index');
     }
 }

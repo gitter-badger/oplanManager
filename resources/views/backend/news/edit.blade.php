@@ -44,7 +44,7 @@
 
             @include ('partials.alerts.errors')
 
-            {!! Form::model($new, array('method' => 'put', 'route' => ['news.update', $new->id], 'class' => 'form-horizontal')) !!}
+            {!! Form::model($new, array('method' => 'put', 'route' => ['news.update', $new->id], 'class' => 'form-horizontal', 'id' => 'myform')) !!}
 
             <p class="lead">ZÁKLADNÍ ÚDAJE</p>
             <div class="form-group">
@@ -81,21 +81,20 @@
 
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                {!! Form::submit('Uprav novinku', ['class' => 'btn btn-primary']) !!}
+              {!! Form::submit('Uprav novinku', ['class' => 'btn btn-primary']) !!}
+
                 <a href="{{route ('news.index')}}" class="btn btn-default">Zpět</a>
               </div>
             </div>
-
 
           {!! Form::close() !!}
 
 
 
+
           </div><!-- /.box-body -->
           <div class="box-footer">
-            {!! Form::open(array('route' => array('news.destroy', $new->id), 'method' => 'delete')) !!}
-              <button type="submit">Vymaž Novinku</button>
-            {!! Form::close() !!}
+
             <a class="btn btn-info btn-sm pull-right" href="{{ url('clubs') }}" role="button">ZPĚT</a>
           </div><!-- /.box-footer-->
         </div><!-- /.box -->
@@ -121,6 +120,11 @@
             <p>
               Průběžné infomrace na hlavní stránce klubu. Interní noviky pro čelny kluby, které se zobrazí ihned po přihlášení do interní části systému.
             </p>
+
+            <button id="test-1">Basic</button>
+    <button id="test-2">Success</button>
+    <button id="test-3">Fancy</button>
+    <button id="test-4">Error</button>
 
           </div><!-- /.box-body -->
           <div class="box-footer">
