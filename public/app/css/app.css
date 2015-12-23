@@ -1,0 +1,10 @@
+/*!
+ *  App CSS by @Zajic - http://www.oplan.cz
+ *  License - CSS: MIT License)
+ */
+
+ /* hide more options update records on hover */
+ .comment_actions {
+   display: none;
+
+ }

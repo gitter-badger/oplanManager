@@ -19,6 +19,11 @@
     <!-- sweetalert -->
     <link href="{{ asset("vendor/sweetalert/dist/sweetalert.css")}}" rel="stylesheet" type="text/css" />
 
+    <!-- App css -->
+    <link href="{{ asset("app/css/app.css")}}" rel="stylesheet" type="text/css" />
+
+
+
 
 
 
@@ -86,6 +91,15 @@
       document.querySelector('button#pokus1').onclick = function() {
         swal("tady je ten tvuj text.");
       };
+
+    </script>
+
+    <script>
+    //show hide more optios onhover
+    $(".comment_div").hover(
+        function() { $(this).children(".comment_actions").show(); },
+        function() { $(this).children(".comment_actions").hide(); }
+      );
 
     </script>
 

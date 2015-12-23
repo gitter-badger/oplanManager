@@ -73,7 +73,7 @@
               <div class="col-sm-offset-2 col-sm-10">
                 <div class="checkbox">
                   <label>
-                    {!! Form::checkbox('default', 1, null) !!} Interní novinka?
+                    {!! Form::checkbox('private', 1, null) !!} Interní novinka? Zobrazí se až po přihlášení do administrace.
                   </label>
                 </div>
               </div>

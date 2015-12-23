@@ -53,7 +53,7 @@
           <i class="fa fa-newspaper-o"></i> <span>Novinky</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="../../index.html"> Všechny stránky</a></li>
+          <li class="{{ $newsMenu['newsIndex'] or 'none' }}"><a href="{{ route('news.index') }}"> Všechny stránky</a></li>
           <li class="{{ $newsMenu['newsCreate'] or 'none'}}"><a href="{{ route('news.create') }}"> Přidej novou</a></li>
         </ul>
       </li>

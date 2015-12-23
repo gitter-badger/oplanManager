@@ -49,19 +49,30 @@
                 <tr>
                   <th>ID</th>
                   <th>Název</th>
-                  <th>Veřejné</th>
-                  <th>Akce</th>
+                  <th>Uživatel</th>
+                  <th>Vytvořeno</th>
+                  <th>Neveřejné</th>
+                  <th style="width: 200px">Akce</th>
                 </tr>
               </thead>
 
               @foreach ($news as $new)
-              <tr>
+              <tr class ="comment_div">
                 <td>{{ $new->id }}</td>
                 <td>{{ $new->title }}</td>
-                <td>neco</td>
+                <td>Jirka</td>
+                <td class="text-muted">
+                  {{ $new->updated_at->format('d.m.Y | H:m') }}
+                </td>
                 <td>
-                  <a href="{{ route('news.show', $new->id ) }}" class="btn btn-primary btn-xs">Zobraz</a>
-                  <a href="{{ route('news.edit', $new->id ) }}" class="btn btn-primary btn-xs">Edit</a>
+                  @if ($new->private == 1)
+                    <i class="fa fa-asterisk"></i>
+                  @endif
+                </td>
+                <td class ="comment_div">
+
+                  <a href="{{ route('news.show', $new->id ) }}">Zobraz</a>
+                  <a href="{{ route('news.edit', $new->id ) }}" class="comment_actions"> | Upravit</a>
                 </td>
               </tr>
 

@@ -21,10 +21,15 @@ class NewsController extends Controller
     public function index()
     {
 
+      $newsMenu = [
+        'newsMain' => 'active',
+        'newsIndex' => 'active'
+      ];
+
       $news = News::orderBy('created_at', 'desc')
                     ->get();
 
-      return view('backend.news.home')->with('news', $news);
+      return view('backend.news.home', compact('newsMenu', 'news'));
       //  return 'jede novinky';
     }
 
