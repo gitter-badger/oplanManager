@@ -1,57 +1,82 @@
-@extends('layouts.auth')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Register</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                        {!! csrf_field() !!}
 
-<body class="hold-transition register-page">
-  <div class="register-box">
-    <div class="register-logo">
-      <a href="../../index2.html"><b>ABM</b>OplanManager</a>
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Name</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">E-Mail Address</label>
+
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-6">
+                                <input type="password" class="form-control" name="password">
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Confirm Password</label>
+
+                            <div class="col-md-6">
+                                <input type="password" class="form-control" name="password_confirmation">
+
+                                @if ($errors->has('password_confirmation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-user"></i>Register
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="register-box-body">
-      <p class="login-box-msg">Registrova nového uživatele</p>
-
-      {!! Form::open(array('url' => '/auth/register', 'class' => 'form')) !!}
-        @if (count($errors) > 0)
-          <div class="alert alert-danger">
-            Vyskytel se nějaký problém při registraci:
-            <ul>
-              @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          </div>
-        @endif
-        <div class="form-group">
-          {!! Form::label('name', 'Uživatelské jméno') !!}
-          {!! Form::text('name', null, array('class'=>'form-control', 'placeholder'=>'Jméno/řezdívka ...')) !!}
-        </div>
-
-        <div class="form-group">
-          {!! Form::label('Vaše e-mailová adresa') !!}
-          {!! Form::text('email', null,
-              array(
-              'class'=>'form-control',
-              'placeholder'=>'E-mail')
-              ) !!}
-        </div>
-
-        <div class="form-group">
-          {!! Form::label('Vaše heslo') !!}
-          {!! Form::password('password', array('class'=>'form-control', 'placeholder'=>'Heslo')) !!}
-        </div>
-
-        <div class="form-group">
-        {!! Form::label('Potvrdit heslo') !!}
-        {!! Form::password('password_confirmation',array('class'=>'form-control', 'placeholder'=>'heslo znovu')) !!}
-        </div>
-
-        <div class="form-group">
-          {!! Form::submit('Vytvořit účet!',array('class'=>'btn btn-primary')) !!}
-        </div>
-
-    {!! Form::close() !!}
-
-      <a href="login.html" class="text-center">Již jsem registrován</a>
-    </div><!-- /.form-box -->
-
+</div>
 @endsection

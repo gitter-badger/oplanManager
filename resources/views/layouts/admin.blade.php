@@ -100,7 +100,6 @@
         function() { $(this).children(".comment_actions").show(); },
         function() { $(this).children(".comment_actions").hide(); }
       );
-
     </script>
 
     <script>

@@ -42,7 +42,7 @@
               </div>
             @endif
 
-            @include ('partials.alerts.errors')
+            {{-- @include ('partials.alerts.errors') --}}
 
             {!! Form::open(array('route' => 'news.store', 'class' => 'form-horizontal')) !!}
 
