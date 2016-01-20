@@ -37,11 +37,10 @@
               <div class="alert alert-success alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <h4> <i class="icon fa fa-check"></i> OK!</h4>
-                {{ Session::get('flash_message') }}
+                {!! html_entity_decode(Session::get('flash_message')) !!}
 
               </div>
             @endif
-
 
 
             <table class="table table-condensed table-hover">
@@ -60,13 +59,16 @@
               <tr class ="comment_div">
                 <td>{{ $new->id }}</td>
                 <td>{{ $new->title }}</td>
-                <td>Jirka</td>
+                <td>
+                  {{ Auth::user()->name }}
+
+                </td>
                 <td class="text-muted">
-                  {{ $new->updated_at->format('d.m.Y | H:m') }}
+                  {{ $new->updated_at->format('d.m.Y | H:i:s') }}
                 </td>
                 <td>
                   @if ($new->private == 1)
-                    <i class="fa fa-asterisk"></i>
+                    <i class="fa fa-asterisk"></i>ahoj
                   @endif
                 </td>
                 <td class ="comment_div">
@@ -79,8 +81,6 @@
             @endforeach
 
           </table>
-
-
 
           </div><!-- /.box-body -->
           <div class="box-footer">

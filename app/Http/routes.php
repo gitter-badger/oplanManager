@@ -22,7 +22,6 @@ Route::get('pokus', function () {
 });
 
 Route::resource('clubs', 'ClubsController');
-Route::resource('news', 'NewsController');
 
 
 Route::get('test/startpage', 'TestController@index');
@@ -39,11 +38,16 @@ Route::get('test/startpage', 'TestController@index');
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
 });
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+
+    Route::resource('news', 'NewsController');
+
+
+
 });

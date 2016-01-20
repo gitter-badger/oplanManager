@@ -14,6 +14,12 @@ class News extends Model
     protected $fillable = [
       'title',
       'content',
-      'private'
+      'private',
+      'user_id'
     ];
+
+    public function username()
+    {
+      return $this->hasOne('App\User');
+    }
 }

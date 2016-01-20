@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use App\User_role;
 use Session;
 
 use Illuminate\Http\Request;
@@ -13,6 +14,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class NewsController extends Controller
 {
+
+    /**
+    * Only for authenticated users
+    */
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -93,6 +102,7 @@ class NewsController extends Controller
     {
         $new = News::findOrFail($id);
         return view('backend.news.edit')->with('new',$new);
+        //return redirect()->back();
     }
 
     /**
@@ -114,9 +124,10 @@ class NewsController extends Controller
         $input = $request->all();
         $new->fill($input)->save();
 
-        Session::flash('flash_message', 'Novinka s názvem: '.$request->get('title').' byla úspěšně upravena.');
+        Session::flash('flash_message', 'Novinka s názvem: <strong>'.$request->get('title').'</strong> byla úspěšně upravena.');
 
-        return view('backend.news.home');
+        return redirect()->back();
+        //return view('backend.news.home');
     }
 
     /**
