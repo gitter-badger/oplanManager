@@ -15,7 +15,7 @@ class CreateMenusTable extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('label', 50);
-            $table->tyniInteger('dropdown');
+            $table->tinyInteger('dropdown')->default('0');;
             $table->string('link', 100)->default('#');
             $table->integer('parent')->default('0');
             $table->integer('sort');

@@ -2,12 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
+
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Model;
 
 class PagesController extends Controller
 {
+    /**
+    * Only for authenticated users
+    */
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +26,17 @@ class PagesController extends Controller
      */
     public function index()
     {
-        //
+      $pageMenu = [
+        'pageMain' => 'active',
+        'pgeIndex' => 'active'
+      ];
+
+    $pages = Page::orderBy('created_at', 'desc')
+                  ->get();
+
+    return view('backend.pages.home', compact('pages', 'pageMenu'));
+
+
     }
 
     /**

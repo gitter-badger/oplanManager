@@ -38,13 +38,13 @@
       </li>
 
       <li class="header">VŘEJNÁ SEKCE</li>
-      <li class="treeview">
+      <li class="treeview {{ $pageMenu['pageMain'] or 'none' }}">
         <a href="#">
           <i class="fa fa-file-text-o"></i> <span>Stránky</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="../../index.html"> Všechny stránky</a></li>
-          <li><a href="../../index2.html"> Přidej novou</a></li>
+          <li class="{{ $pageMenu['pageIndex'] or 'none' }}"><a href="{{ route('pages.index') }}"> Všechny stránky</a></li>
+          <li class="{{ $pageMenu['pageCreate'] or 'none' }}"><a href="{{ route('pages.create') }}"> Přidej novou</a></li>
         </ul>
       </li>
 
