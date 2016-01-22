@@ -28,7 +28,7 @@ class PagesController extends Controller
     {
       $pageMenu = [
         'pageMain' => 'active',
-        'pgeIndex' => 'active'
+        'pageIndex' => 'active'
       ];
 
     $pages = Page::orderBy('created_at', 'desc')
@@ -46,7 +46,12 @@ class PagesController extends Controller
      */
     public function create()
     {
-        //
+      $pageMenu = [
+        'pageMain' => 'active',
+        'pageCreate' => 'active'
+      ];
+
+        return view('backend.pages.create')->with('pageMenu', $pageMenu );
     }
 
     /**
