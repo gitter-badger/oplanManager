@@ -43,8 +43,8 @@
           <i class="fa fa-file-text-o"></i> <span>Stránky</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li class="{{ $pageMenu['pageIndex'] or 'none' }}"><a href="{{ route('pages.index') }}"> Všechny stránky</a></li>
-          <li class="{{ $pageMenu['pageCreate'] or 'none' }}"><a href="{{ route('pages.create') }}"> Přidej novou</a></li>
+          <li class="{{ $pageMenu['pageIndex'] or 'none' }}"><a href="{{ route('admin.pages.index') }}"> Všechny stránky</a></li>
+          <li class="{{ $pageMenu['pageCreate'] or 'none' }}"><a href="{{ route('admin.pages.create') }}"> Přidej novou</a></li>
         </ul>
       </li>
 

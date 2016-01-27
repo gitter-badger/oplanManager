@@ -6,13 +6,13 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Přidat STRÁNKU
-      <small> přidává statickou stránku do veřejné části</small>
+      Upravit STRÁNKU
+      <small> uprav stávající stránku</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Domů</a></li>
       <li><a href="{{ route('admin.pages.index') }}">Stránky</a></li>
-      <li class="active">Přidat stránku</li>
+      <li class="active">Upravit stránku</li>
     </ol>
   </section>
 
@@ -24,7 +24,7 @@
         <!-- Default box -->
         <div class="box box-danger">
           <div class="box-header with-border">
-            <h3 class="box-title">Vytvoř stránku</h3>
+            <h3 class="box-title">Upravit stránku</h3>
             <div class="box-tools pull-right">
               <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
               <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
@@ -37,14 +37,14 @@
               <div class="alert alert-success alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <h4> <i class="icon fa fa-check"></i> OK!</h4>
-                {{ Session::get('flash_message') }}
+                {!! html_entity_decode(Session::get('flash_message')) !!}
 
               </div>
             @endif
 
-            {{-- @include ('partials.alerts.errors') --}}
+            @include ('partials.alerts.errors')
 
-            {!! Form::open(array('route' => 'admin.pages.store', 'class' => 'form-horizontal')) !!}
+            {!! Form::model($page, array('method' => 'put', 'route' => ['admin.pages.update', $page->id], 'class' => 'form-horizontal', 'id' => 'myform')) !!}
 
             <p class="lead">ZÁKLADNÍ ÚDAJE</p>
             <div class="form-group">
@@ -72,17 +72,22 @@
 
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                {!! Form::submit('Ulož stránku', ['class' => 'btn btn-primary']) !!}
+              {!! Form::submit('Uprav stránku', ['class' => 'btn btn-primary']) !!}
+
                 <a href="{{route ('admin.pages.index')}}" class="btn btn-default">Zpět</a>
               </div>
             </div>
-
 
           {!! Form::close() !!}
 
 
 
+
           </div><!-- /.box-body -->
+          <div class="box-footer">
+
+            <a class="btn btn-info btn-sm pull-right" href="{{ url('clubs') }}" role="button">ZPĚT</a>
+          </div><!-- /.box-footer-->
         </div><!-- /.box -->
       </div><!-- /.col-md-8 -->
 
@@ -99,7 +104,18 @@
           <div class="box-body">
 
             <h4>K ČEMU SLOUŽÍ:</h4>
+            <p>
+              Novinka je krátká zpráva, která má konkrétní časovou platnou, bude odsouvána novými novinkami. Pro noviky je vytvořena RSS/ATOM feed pro snadné odebírání novinek.
+            </p>
+            <h4>POUŽITÍ:</h4>
+            <p>
+              Průběžné infomrace na hlavní stránce klubu. Interní noviky pro čelny kluby, které se zobrazí ihned po přihlášení do interní části systému.
+            </p>
 
+            <button id="test-1">Basic</button>
+    <button id="test-2">Success</button>
+    <button id="test-3">Fancy</button>
+    <button id="test-4">Error</button>
 
           </div><!-- /.box-body -->
           <div class="box-footer">

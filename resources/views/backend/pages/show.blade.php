@@ -6,8 +6,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Stránky
-      <small> - přehled statických stánek</small>
+      Stránka <small>statická stránka bez komentářů</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Domů</a></li>
@@ -24,7 +23,7 @@
         <!-- Default box -->
         <div class="box box-danger">
           <div class="box-header with-border">
-            <h3 class="box-title">Přehled</h3>
+            <h3 class="box-title">Náhled</h3>
             <div class="box-tools pull-right">
               <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
               <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
@@ -42,47 +41,34 @@
               </div>
             @endif
 
+            <h3>{{ $page->title }} <small>vytvořeno/editováno: v {{ $page->created_at }}- ID: {{ $page->id }}</small></h3>
 
-            <table class="table table-condensed table-hover">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Název</th>
-                  <th>Uživatel</th>
-                  <th>Vytvořeno</th>
-                  <th style="width: 200px">Akce</th>
-                </tr>
-              </thead>
+            <p>
+              {!! html_entity_decode($page->content) !!}
+            </p>
 
-              @foreach ($pages as $page)
-              <tr class ="comment_div">
-                <td>{{ $page->id }}</td>
-                <td>{{ $page->title }}</td>
-                <td>
-                  {{ Auth::user()->name }}
 
-                </td>
-                <td class="text-muted">
-                  {{ $page->updated_at->format('d.m.Y | H:i:s') }}
-                </td>
-                <td class ="comment_div">
-
-                  <a href="{{ route('admin.pages.show', $page->id ) }}">Zobraz</a>
-                  <a href="{{ route('admin.pages.edit', $page->id ) }}" class="comment_actions"> | Upravit</a>
-                </td>
-              </tr>
-
-            @endforeach
-
-          </table>
+            <a href="#"></a>
 
           </div><!-- /.box-body -->
           <div class="box-footer">
+            {!! Form::open(array('route' => array('news.destroy', $page->id), 'method' => 'delete', 'id' => 'delform')) !!}
+
+            {{-- <button type="submit" id="delete">
+              <i class="fa fa-trash-o"></i>
+              Delete
+            </button>--}}
+            {!! Form::close() !!}
+
+            <a href="{{ route('admin.pages.edit', $page->id ) }}" class="btn btn-primary"><i class="fa fa-pencil"></i> Editovat</a>
+            <a href="{{ route('admin.pages.index' )}}" class="btn btn-default">Zpět</a>
+
+            <button id="deleteitem" class="btn btn-danger pull-right">
+              <i class="fa fa-trash"></i>
+              Smazat
+            </button>
 
 
-<p>
-  ddd
-</p>
 
           </div><!-- /.box-footer-->
         </div><!-- /.box -->
@@ -107,7 +93,7 @@
 
           </div><!-- /.box-body -->
           <div class="box-footer">
-            poslední změna
+            poslední změna 22.10.2015
           </div><!-- /.box-footer-->
         </div><!-- /.box -->
       </div><!-- /.col-md-4 -->

@@ -47,7 +47,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/home', 'HomeController@index');
 
     Route::resource('news', 'NewsController');
-    Route::resource('pages', 'PagesController');
+    Route::resource('admin/pages', 'PagesController');
 
 
 
