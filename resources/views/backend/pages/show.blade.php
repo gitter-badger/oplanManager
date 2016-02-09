@@ -52,7 +52,7 @@
 
           </div><!-- /.box-body -->
           <div class="box-footer">
-            {!! Form::open(array('route' => array('news.destroy', $page->id), 'method' => 'delete', 'id' => 'delform')) !!}
+            {!! Form::open(array('route' => array('admin.pages.destroy', $page->id), 'method' => 'delete', 'id' => 'delform')) !!}
 
             {{-- <button type="submit" id="delete">
               <i class="fa fa-trash-o"></i>
