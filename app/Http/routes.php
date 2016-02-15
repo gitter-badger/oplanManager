@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+Route::get('/','FrontEndController@index');
+
+//Route::get('/', function () {
+//    return view('frontend.index');
+//});
 
 // BeckEnd
 

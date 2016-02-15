@@ -2,13 +2,15 @@
 
 @section('content')
   <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">ABM</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Navbar Link</a></li>
+        <li><a href="{{ url('login')}}">Přihlásit</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#">Navbar Link</a></li>
+        <li><a href="{{ url('login')}}">Přihlásit</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -16,20 +18,36 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text">Starter Template</h1>
+      <h1 class="header center orange-text">ABM</h1>
       <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        <h5 class="header col s12 light">Klub orientačního běhu Moira Brno o.s.</h5>
       </div>
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-      </div>
-      <br><br>
 
     </div>
   </div>
 
 
   <div class="container">
+
+    <div class="section">
+      <div class="row">
+        <div class="col sm12 m8"><!-- News block -->
+
+             <h4><i class="medium material-icons">snooze</i> NOVINKY</h4>
+            @foreach($news as $new)
+                <h5>{{ $new->title}} <small class="grey-text">autor: Bobik, vytvořeno:  {{ $new->created_at}}</small></h5>
+                <p>
+                  {!! html_entity_decode($new->content) !!}
+                  <div class="divider"></div>
+                </p>
+            @endforeach
+
+
+        </div>
+      </div>
+    </div>
+
+
     <div class="section">
 
       <!--   Icon Section   -->
@@ -70,38 +88,35 @@
     </div>
   </div>
 
-  <footer class="page-footer orange">
+  <footer class="page-footer blue darken-3">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h6 class="white-text">ABM</h6>
+          <p class="grey-text text-lighten-4">Klub orientačního běhu Moira Brno o.s.</p>
 
 
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
+          <h6 class="white-text">Odkazy</h6>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><a class="white-text" href="#!">Oblast</a></li>
+            <li><a class="white-text" href="#!">ORIS</a></li>
           </ul>
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
+          <h6 class="white-text">Kontakt</h6>
           <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
             <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Powered by Laravel, by OplanManager, media using<a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
   </footer>
