@@ -10,7 +10,8 @@
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Bootstrap CSS -->
-    <link type="text/css" rel="stylesheet" href="{{ asset("vendor/bootstrap4/css/bootstrap.min.css") }}"  media="screen,projection"integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous" />
+    <link type="text/css" rel="stylesheet" href="{{ asset("vendor/bootstrap4/css/bootstrap.min.css") }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset("app/css/app-frontend.css") }}">
   </head>
   <body>
 
