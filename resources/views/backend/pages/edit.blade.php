@@ -6,7 +6,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Upravit STRÁNKU
+      UPRAVIT STRÁNKU | {{ $page->title }}
       <small> uprav stávající stránku</small>
     </h1>
     <ol class="breadcrumb">
@@ -20,9 +20,10 @@
   <section class="content">
 
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-10">
         <!-- Default box -->
         <div class="box box-danger">
+          <!--
           <div class="box-header with-border">
             <h3 class="box-title">Upravit stránku</h3>
             <div class="box-tools pull-right">
@@ -30,6 +31,7 @@
               <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
             </div>
           </div>
+        -->
           <div class="box-body">
 
             {{-- Flash Session message after store data --}}
@@ -48,7 +50,7 @@
 
             <p class="lead">ZÁKLADNÍ ÚDAJE</p>
             <div class="form-group">
-              {!! Form::label('title', 'Nadpis', array('class' => 'col-sm-2 control-label')) !!}
+              {!! Form::label('title', 'NADPIS', array('class' => 'col-sm-2 control-label')) !!}
               <div class="col-sm-10">
               {!! Form::text('title', null,
                        array(//'required',
@@ -58,7 +60,7 @@
             </div>
 
             <div class="form-group">
-              {!! Form::label('content', 'Obsah', array('class' => 'col-sm-2 control-label')) !!}
+              {!! Form::label('content', 'OBSAH', array('class' => 'col-sm-2 control-label')) !!}
               <div class="col-sm-10">
               {!! Form::textarea('content', null,
                        array('required',
@@ -84,21 +86,42 @@
 
 
           </div><!-- /.box-body -->
-          <div class="box-footer">
+          <!--<div class="box-footer">
 
             <a class="btn btn-info btn-sm pull-right" href="{{ url('clubs') }}" role="button">ZPĚT</a>
-          </div><!-- /.box-footer-->
+          </div>        --><!-- /.box-footer-->
+
         </div><!-- /.box -->
       </div><!-- /.col-md-8 -->
 
-      <div class="col-md-4">
+      <div class="col-md-2">
+        <!-- Default box -->
+
+
+            <p>STAV</p>
+            {!! Form::select('state', ['1' => 'AKTIVNÍ', '2' => 'NEAKTIVNÍ'], null, ['class' => 'form-control']); !!}
+            <p>URL</p>
+            {!! Form::text('slug', null,
+                     array(//'required',
+                           'class'=>'form-control',
+                           'placeholder'=>'nadpis stránky')) !!}
+            <p>
+              AUTOR
+            </p>
+            {!! Form::select('autor', ['1' => 'Admin', '2' => 'Nekdo jiny'], null, ['class' => 'form-control']); !!}
+
+        <br>
+
+      </div><!-- /.col-md-4 -->
+
+
+      <div class="col-md-2">
         <!-- Default box -->
         <div class="box box-solid box-default">
           <div class="box-header with-border">
             <h3 class="box-title">NÁPOVĚDA</h3>
             <div class="box-tools pull-right">
               <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
-              <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
             </div>
           </div>
           <div class="box-body">
@@ -113,9 +136,9 @@
             </p>
 
             <button id="test-1">Basic</button>
-    <button id="test-2">Success</button>
-    <button id="test-3">Fancy</button>
-    <button id="test-4">Error</button>
+            <button id="test-2">Success</button>
+            <button id="test-3">Fancy</button>
+            <button id="test-4">Error</button>
 
           </div><!-- /.box-body -->
           <div class="box-footer">

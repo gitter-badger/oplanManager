@@ -37,7 +37,7 @@
         </ul>
       </li>
 
-      <li class="header">VEŘEJNÁ SEKCE</li>
+      <li class="header">SPRÁVA OBSAHU</li>
       <li class="treeview {{ $pageMenu['pageMain'] or 'none' }}">
         <a href="#">
           <i class="fa fa-file-text-o"></i> <span>Stránky</span> <i class="fa fa-angle-left pull-right"></i>
