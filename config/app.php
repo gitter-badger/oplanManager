@@ -162,6 +162,9 @@ return [
         //Illuminate\Html\HtmlServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        // Slugable class
+        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+
 
     ],
 
