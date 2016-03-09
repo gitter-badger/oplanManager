@@ -13,6 +13,9 @@
 
 Route::get('/','FrontEndController@index');
 
+//Route::get('stranka/{id}', 'FrontEndController@stranka');
+Route::get('stranka/{slug}', 'FrontEndController@stranka');
+
 //Route::get('/', function () {
 //    return view('frontend.index');
 //});

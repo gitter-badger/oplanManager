@@ -38,25 +38,11 @@
       </li>
 
       <li class="header">SPRÁVA OBSAHU</li>
-      <li class="treeview {{ $pageMenu['pageMain'] or 'none' }}">
-        <a href="#">
-          <i class="fa fa-file-text-o"></i> <span>Stránky</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li class="{{ $pageMenu['pageIndex'] or 'none' }}"><a href="{{ route('admin.pages.index') }}"> Všechny stránky</a></li>
-          <li class="{{ $pageMenu['pageCreate'] or 'none' }}"><a href="{{ route('admin.pages.create') }}"> Přidej novou</a></li>
-        </ul>
-      </li>
+      <li><a href="{{ route('admin.pages.index') }}"><i class="fa fa-file-text-o"></i> Stránky</a></li>
+      <li><a href="{{ route('news.index') }}"><i class="fa fa-newspaper-o"></i> Novinky</a></li>
+      <li><a href="#"><i class="fa fa-bars"></i>Správa menu</a></li>
+      <li><a href="#"><i class="fa fa-file-image-o"></i> Správa médií</a></li>
 
-      <li class="treeview {{ $newsMenu['newsMain'] or 'none' }}">
-        <a href="#">
-          <i class="fa fa-newspaper-o"></i> <span>Novinky</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-          <li class="{{ $newsMenu['newsIndex'] or 'none' }}"><a href="{{ route('news.index') }}"> Všechny stránky</a></li>
-          <li class="{{ $newsMenu['newsCreate'] or 'none'}}"><a href="{{ route('news.create') }}"> Přidej novou</a></li>
-        </ul>
-      </li>
 
       <li>
         <a href="../mailbox/mailbox.html">

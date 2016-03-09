@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\News;
+use App\Page;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -21,5 +22,20 @@ class FrontEndController extends Controller
                     ->get();
 
       return view('frontend.index', compact('news'));
+    }
+
+    public function stranka($slug)
+    {
+
+      //$page = Page::findOrFail($id);
+      $page = Page::findBySlug($slug);
+      if (!$page) {
+            abort(404);
+        }
+
+      return view('frontend.page', compact('page'));
+
+
+
     }
 }

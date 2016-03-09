@@ -20,7 +20,7 @@
   <section class="content">
 
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-8">
         <!-- Default box -->
         <div class="box box-danger">
           <!--
@@ -94,8 +94,9 @@
         </div><!-- /.box -->
       </div><!-- /.col-md-8 -->
 
-      <div class="col-md-2">
-        <!-- Default box -->
+      <div class="col-md-4">
+        <div class="box box-solid box-default">
+          <div class="box-body">
 
 
             <p>STAV</p>
@@ -111,11 +112,12 @@
             {!! Form::select('autor', ['1' => 'Admin', '2' => 'Nekdo jiny'], null, ['class' => 'form-control']); !!}
 
         <br>
-
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
       </div><!-- /.col-md-4 -->
 
 
-      <div class="col-md-2">
+      <div class="col-md-4">
         <!-- Default box -->
         <div class="box box-solid box-default">
           <div class="box-header with-border">

@@ -15,6 +15,7 @@
   </head>
   <body>
 
+    @include('partials.headers.frontend')
     <!-- Content Wrapper. Contains page content -->
     @yield('content')
 
