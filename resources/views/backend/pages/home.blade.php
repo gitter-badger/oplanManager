@@ -63,6 +63,10 @@
                 <td><a href="{{url('admin/pages')}}/{{$page->id}}/edit">{{ $page->title }}</a></td>
                 <td>
 
+                  <p class="text-success">
+                    <i class="fa fa-circle"></i>
+                  </p>
+
                 </td>
                 <td>
                   {{ Auth::user()->name }}
@@ -72,7 +76,7 @@
                   {{ $page->updated_at->format('d.m.Y | H:i:s') }}
                 </td>
                 <td>
-                /{{ $page->slug }}
+                stranka/{{ $page->slug }}
                 </td>
                 <td class ="comment_div">
 
